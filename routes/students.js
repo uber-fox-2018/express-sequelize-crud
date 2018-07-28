@@ -19,10 +19,12 @@ routes.get("/", function(req,res){
 });
 
 routes.get("/add", function(req,res){
-	res.render("form", {title: `${section}s`,
+	res.render("form", {
+		section:`${section}s`,
+		actionurl:"add",
+		action:"Add",
 		keys:controller(`${section.toLowerCase()}s`,"getKeys"),
-		relpath:section.toLowerCase(),
-		obj:section.toLowerCase()
+		value:Array(controller(`${section.toLowerCase()}s`,"getKeys").length),
 	});
 	
 });
@@ -52,9 +54,12 @@ routes.get("/delete/:id", function(req,res){
 routes.get("/edit/:id",function(req,res){
 	controller(`${section.toLowerCase()}s`,"read_one",req.params.id)
 		.then((currentdata)=>{
-			res.render("edit",{
-				title:`${section}s`,
-				obj:currentdata.dataValues
+			res.render("form",{
+				section:`${section}s`,
+				actionurl:currentdata.dataValues.id,
+				action:"Edit",
+				keys:controller(`${section.toLowerCase()}s`,"getKeys"),
+				value:Object.values(currentdata.dataValues)
 			});
 		})
 		.catch((err)=>{
