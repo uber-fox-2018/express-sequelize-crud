@@ -6,7 +6,7 @@ module.exports = (req, res) => {
     model.Student
         .findOne({ where: { id } })
         .then(student => {
-            res.render("students/edit", { student })
+            res.render("students/edit", { student, validationErrors: [] })
         })
         .catch(err => {
             res.status(500).json(err)

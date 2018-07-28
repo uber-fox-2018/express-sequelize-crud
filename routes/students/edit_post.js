@@ -19,6 +19,9 @@ module.exports = (req, res) => {
             res.redirect('/students')
         })
         .catch(err => {
-            res.status(500).json(err)
+            if (err.name == "SequelizeValidationError")
+                res.render('students/edit', { student: updatedStudent, validationErrors: err.errors })
+            else
+                res.status(500).json(err)
         })
 }

@@ -3,7 +3,9 @@ const model = require('../../models')
 module.exports = (req, res) => {
     model
         .Student
-        .findAll()
+        .findAll({order: [
+            ['id']
+        ]})
         .then(students => {
             res.render("students/", { students })
         })
