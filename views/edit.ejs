@@ -6,11 +6,11 @@
 <body>
 	<h1> Add <%=title %> Data </h1>
 
-	<form action="/edit" method=POST>
-		<% for (let key of keys) {%>
+	<form action="<%=obj.id%>" method=POST>
+		<% for (let key in obj) {%>
 			<% if (key !== "createdAt" && key!== "updatedAt" && key !== "id") { %>
 				<label> <%=key.split("_").map(s=>s.replace(/^[a-z]/i,(match,string)=>match.toUpperCase())).join(" ") %></label>
-				<input type="text" name="<%=key%>">
+				<input type="text" name="<%=key%>" value="<%=obj[key]%>">
 				<br>
 			<% } %>
 		<% } %>

@@ -50,5 +50,29 @@ routes.get("/delete/:id", function(req,res){
 		});
 });
 
+routes.get("/edit/:id",function(req,res){
+	controller(`${section.toLowerCase()}s`,"read_one",req.params.id)
+		.then((currentdata)=>{
+			res.render("edit",{
+				title:`${section}s`,
+				obj:currentdata.dataValues
+			});
+		})
+		.catch((err)=>{
+			res.render("error", {err:err});
+		});
+});
+
+routes.post("/edit/:id",function(req,res){
+	//res.send(req.params);
+	controller(`${section.toLowerCase()}s`,"edit",[...Object.values(req.body),req.params.id])
+		.then((response)=>{
+			res.redirect(`/${section.toLowerCase()}s`);
+		})
+		.catch((err)=>{
+			res.render("error", {err:err});
+		});
+	
+});
 
 module.exports = routes;

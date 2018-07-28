@@ -40,7 +40,10 @@
 					<td> <%=data[datasection]%> </td>
 				<% } %>
 			<% } %>
-			<td><a href="/<%=`${obj.toLowerCase()}s`%>/delete/<%=data.id%>">delete</a></td>
+			<td>
+				<a href="/<%=`${obj.toLowerCase()}s`%>/delete/<%=data.id%>">delete</a>
+				<a href="/<%=`${obj.toLowerCase()}s`%>/edit/<%=data.id%>">edit</a>
+			</td>
 		</tr>
 		<% } %>
 

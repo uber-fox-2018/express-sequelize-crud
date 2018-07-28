@@ -24,7 +24,7 @@ class TeacherController{
 			.findAll();
 	}
 
-	static update([first_name, last_name, email,id]){
+	static update([first_name, last_name, email, id]){
 		return Model.Teacher
 			.update(
 				{
