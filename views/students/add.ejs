@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Uber-Fox</title>
+</head>
+
+<body>
+    <h1>Add Students</h1>
+    <a href="/students">show all data</a>
+    <form action="/students/add" method="POST">
+        <label>
+            First Name
+            <input type="text" name="first_name" />
+        </label>
+        <label>
+            Last Name
+            <input type="text" name="last_name" />
+        </label>
+        <label>
+            Email
+            <input type="text" name="email" />
+        </label>
+        <input type="submit" value="Add Student">
+    </form>
+</body>
+
+</html>
