@@ -40,5 +40,15 @@ routes.post("/add", function(req,res){
 
 });
 
+routes.get("/delete/:id", function(req,res){
+	controller(`${section.toLowerCase()}s`,"delete",req.params.id)
+		.then((response)=>{
+			res.redirect(`/${section.toLowerCase()}s`);
+		})
+		.catch((err)=>{
+			res.render("error", {err:err});
+		});
+});
+
 
 module.exports = routes;
