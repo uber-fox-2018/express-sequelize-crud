@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Data Students</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <center><h1>Students Data</h1>
+        <form action="students/add">
+    <button>add student</button></center></form><br>
+    no <span style="display:inline-block; width: 500px;">| full_name </span>| email <br>
+    <% for(let i = 0 ; i < fileStudents.length ; i++) { %>
+        <hi>&nbsp<%= fileStudents[i].id %>&nbsp&nbsp|&nbsp</hi>
+        <span style="display:inline-block; width: 485px;">
+        <hi><%= fileStudents[i].first_name %></hi>
+        <hi><%= fileStudents[i].last_name %></span>|</hi>
+        <hi><%= fileStudents[i].email %></hi>
+        <br>
+    <% } %>
+    
+</body>
+</html>
