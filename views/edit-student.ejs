@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit Student</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+    <h1 style="text-align: center">Edit Student Data</h1>
+    <a href="/students"><h3 style="text-align: center">Show All Data</h3></a>
+    <form action="/students/edit/<%= data_student.id%>" method="post">
+        <div class="form-group">
+            <label for="first_name">First Name :</label>
+            <input type="text" name="first_name" value="<%= data_student.first_name %>" class="form-control">
+        </div>
+        <div>
+            <label for="first_name">Last Name :</label>
+            <input type="text" name="last_name" value="<%= data_student.last_name %>" class="form-control">
+        </div>
+        <div>
+            <label for="first_name">Email :</label>
+            <input type="email" name="email" value="<%= data_student.email %>" class="form-control">
+        </div>
+        <br>
+        <button class="btn btn-primary">Edit Student</button>
+    </form>
+    
+</body>
+</html>
