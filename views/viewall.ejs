@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Teacher</title>
+	<style>
+		table {
+		    font-family: arial, sans-serif;
+		    border-collapse: collapse;
+		    width: 100%;
+		}
+
+		td, th {
+		    border: 1px solid #dddddd;
+		    text-align: left;
+		    padding: 8px;
+		}
+
+		tr:nth-child(even) {
+		    background-color: #dddddd;
+		}
+	</style>
+</head>
+<body>
+	<h2><%=title %> Data</h2>
+	<h3><a href="/<%=`${obj.toLowerCase()}s`%>/add">add <%=obj %></a></h3>
+	<table>
+		<tr>
+			<% for (let key in listdata[0]){ %> 
+				<% if (key !== "createdAt" && key!== "updatedAt" && key !== "id") { %>
+					<th> <%=key.split("_").map(s=>s.replace(/^[a-z]/i,(match,string)=>match.toUpperCase())).join(" ") %> </th>
+				<% } %>
+			<% } %>
+			<th>Options</th>
+		</tr>
+
+		<% for(let data of listdata){%>
+		<tr>
+			<% for (let datasection in data){ %>
+				<% if (datasection !== "createdAt" && datasection!== "updatedAt" && datasection !== "id") { %>
+					<td> <%=data[datasection]%> </td>
+				<% } %>
+			<% } %>
+			<td><a href="/<%=`${obj.toLowerCase()}s`%>/delete/<%=data.id%>">delete</a></td>
+		</tr>
+		<% } %>
+
+	</table>
+</body>
+</html>

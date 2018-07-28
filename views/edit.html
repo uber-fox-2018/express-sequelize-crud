@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1> Add <%=title %> Data </h1>
+
+	<form action="/edit" method=POST>
+		<% for (let key of keys) {%>
+			<% if (key !== "createdAt" && key!== "updatedAt" && key !== "id") { %>
+				<label> <%=key.split("_").map(s=>s.replace(/^[a-z]/i,(match,string)=>match.toUpperCase())).join(" ") %></label>
+				<input type="text" name="<%=key%>">
+				<br>
+			<% } %>
+		<% } %>
+
+		<input type="submit" value="Submit">
+	</form> 
+</body>
+</html>
