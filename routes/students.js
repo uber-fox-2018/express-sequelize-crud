@@ -65,9 +65,9 @@ routes.get('/delete/:id', (req, res) => {
 
 routes.get('/', (req, res) => {
     ControllerStudents.showStudents()
-    .then(dataTeachers => {
+    .then(dataStudents => {
         let containTeacherArr = []
-        dataTeachers.forEach(dataStudent => {
+        dataStudents.forEach(dataStudent => {
             let teacherObj = {
                 id: dataStudent.id,
                 firstName: dataStudent.firstName,

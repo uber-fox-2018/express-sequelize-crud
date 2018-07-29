@@ -10,6 +10,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use('/', routes.routes)
 app.use('/teachers', routes.routesTeacher)
 app.use('/students', routes.routesStudent)
+app.use('/subjects', routes.routesSubject)
 // app.get('/teachers/add', routes.routesTeacher)
 
 

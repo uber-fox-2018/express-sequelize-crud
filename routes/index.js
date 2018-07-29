@@ -1,6 +1,7 @@
 const routes = require('express').Router()
 const routesTeacher = require('./teachers')
 const routesStudent = require('./students')
+const routesSubject = require('./subjects')
 
 routes.get('/', (req, res) => {
     res.render('homepage')
@@ -10,5 +11,6 @@ routes.get('/', (req, res) => {
 module.exports = {
     routes,
     routesTeacher,
-    routesStudent
+    routesStudent,
+    routesSubject
 }
