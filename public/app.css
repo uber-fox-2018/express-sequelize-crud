@@ -1,0 +1,82 @@
+body{
+    background-image : url("https://images.unsplash.com/photo-1485841890310-6a055c88698a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4c9c2def3becce37f2ff57b7c7454a11&auto=format&fit=crop&w=900&q=60");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1{
+    text-align: center;
+    color: cornflowerblue;
+}
+
+h2{
+    text-align: center;
+    color: slategray;
+}
+
+h3{
+    text-align: center;
+    color: rgb(224, 16, 79);
+}
+
+p{
+    text-align: center;
+    color: rgb(0, 132, 255);
+}
+
+div {
+    width: 80%;
+    border-radius: 5px;
+    /* background-color: #f2f2f2;  */
+    padding: auto;
+    margin: auto;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+#tabel{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    background:#72deff;
+}
+#tabel td, #tabel th {
+    border: 1px solid #ddd;
+    padding: 10px 10px 20px;
+    text-align: center;
+}
+
+#tabel tr:nth-child(even){background-color: #f2f2f2;}
+
+#tabel tr:hover {background-color:dimgray;}
+
+#tabel th {
+    padding: auto;
+    margin: auto;
+    text-align: center;
+    background-color:rgb(62, 168, 255);
+    color: white;
+}

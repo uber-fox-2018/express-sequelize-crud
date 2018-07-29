@@ -1,0 +1,25 @@
+<% include partials/header %>
+
+<h1> Subjects Data </h1>
+<p> <a href="/subjects/add">add subject</a> </p>
+<div>
+    <table id="tabel">
+        <tr>
+            <th>id</th>
+            <th>Subject Name</th>
+            <th>Options</th>
+        </tr>
+        <% for(let subject of subjects){ %>
+        <tr>
+            <td><%= subject.id %></td>
+            <td><%= subject.subject_name %></td>
+            <td>
+                <a href="/subjects/edit/<%= subject.id%>">Edit</a>   || 
+                <a href="/subjects/delete/<%= subject.id%>" onclick="return confirm('Delete <%= subject.subject_name %> ?')">Delete</a>
+            </td>
+        </tr>
+        <% } %>  
+    </table>
+</div>
+
+<% include partials/footer %>
