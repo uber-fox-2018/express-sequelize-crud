@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/custom.css">
+</head>
+<body>
+    
+        <div id="container">
+            <div id="table-form">
+                <form action="/editSj" method="POST">
+                    <label>Subject Name
+                        <input type="text" class="updateStudent" name="id" value="<%= x.id%>" style="display: none;">
+                        <input type="text" class="updateStudent" name="subject_name" value="<%= x.subject_name%>">
+                    </label>
+                    <input type="submit" class="submitUpdate" name="submit" value="CHANGE">
+                </form>
+            </div>
+        </div>
+        
+</body>
+</html>
