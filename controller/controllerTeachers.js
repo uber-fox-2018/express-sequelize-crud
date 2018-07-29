@@ -70,12 +70,5 @@ class ControllerTeacher {
     }
 }
 
-// ControllerTeacher.showTeachers()
-// .then(data => {
-//     console.log(data);
-// })
-// .catch(err => {
-//     console.log(err);
-// })
 
 module.exports = ControllerTeacher
