@@ -10,7 +10,7 @@
 <body>
     <h1 style="text-align: center">Edit Teacher Data</h1>
     <a href="/teachers"><h3 style="text-align: center">Show All Data</h3></a>
-    <form action="/teachers/edit/<%= data_teacher.id%>" method="post">
+    <form action="/teachers/edit/<%= data_teacher.id%>" method="post" onsubmit="return confirm('Are you sure?');">
         <div class="form-group">
             <label for="first_name">First Name :</label>
             <input type="text" name="first_name" value="<%= data_teacher.first_name %>" class="form-control">

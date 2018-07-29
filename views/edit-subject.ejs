@@ -10,7 +10,7 @@
 <body>
     <h1 style="text-align: center">Edit Subject Data</h1>
     <a href="/subjects"><h3 style="text-align: center">Show All Data</h3></a>
-    <form action="/subjects/edit/<%= data_subjects.id%>" method="post">
+    <form action="/subjects/edit/<%= data_subjects.id%>" method="post" onsubmit="return confirm('Are you sure?');">
         <div class="form-group">
             <label for="subject_name">Subject Name :</label>
             <input type="text" name="subject_name" value="<%= data_subjects.subject_name %>" class="form-control">
