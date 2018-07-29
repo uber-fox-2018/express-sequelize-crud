@@ -1,12 +1,12 @@
 const model = require('../../models')
 
 const get = (req, res) => {
-    const id = req.params.studentId * 1;
+    const id = req.params.teacherId * 1;
 
-    model.Student
+    model.Teacher
         .findOne({ where: { id } })
-        .then(student => {
-            res.render("students/delete", { student })
+        .then(teacher => {
+            res.render("teachers/delete", { teacher })
         })
         .catch(err => {
             res.status(500).json(err)
@@ -14,12 +14,12 @@ const get = (req, res) => {
 }
 
 const post = (req, res) => {
-    let id = req.params.studentId * 1
+    let id = req.params.teacherId * 1
 
-    model.Student
+    model.Teacher
         .destroy({ where: { id } })
         .then(changes => {
-            res.redirect('/students')
+            res.redirect('/teachers')
         })
         .catch(err => {
             res.status(500).json(err)
