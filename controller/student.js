@@ -49,12 +49,14 @@ module.exports = {
       .findById(req.params.id)
       .then(dataFind => {
         res.render('form_edit_student', {
+          message: null,
           data: dataFind,
           error: null
         })
       })
       .catch(err => {
         res.render('form_edit_student', {
+          message: null,
           data: null,
           error: err.message
         })
