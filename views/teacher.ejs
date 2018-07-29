@@ -13,7 +13,7 @@
     <div class="container" style="text-align: right">
     <div class="container" style="text-align: center">
             <h1>Teacher Data</h1>
-            <a href="/teacher/add" class="badge badge-primary">Add Teacher</a>
+            <button type="button" class="btn btn-primary" onclick="location.href = '/teacher/add'">Add Teacher</button>  
             <br><br>
             <div class="container">
             <table class="table">
@@ -33,14 +33,17 @@
                     <td><%=teacher.firstName %></td>
                     <td><%=teacher.lastName %></td>
                     <td><%=teacher.email %></td>
-                    <td><a href="/teacher/edit/<%=teacher.id%>" class="badge badge-info">Edit</a>  <a href="/teacher/delete/<%=teacher.id%>" class="badge badge-info">Delete</a> </td>
+                    <td>
+                        <button type="button" class="btn btn-success" onclick="location.href = '/teacher/edit/<%=teacher.id%>'">Edit</button>  
+                        <button type="button" class="btn btn-success" onclick="location.href = '/teacher/delete/<%=teacher.id%>'">Delete</button>  
+                    </td>
                     </tr>
                     <% }) %>
                 </tbody>
             </table>
             </div><br>
         </div> 
-            <a href="/" class="badge badge-primary">Back</a> 
+        <button type="button" class="btn btn-primary" onclick="location.href = '/'">Back</button>  
     </div>
     
 </body>

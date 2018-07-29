@@ -13,31 +13,43 @@ router.get('/', (req, res) => {
 })
 
 router.get('/add', (req, res) => {
-    res.render('addTeacher')
+    res.render('addTeacher', {message: null, err: null})
 })
 
 router.post('/add', (req, res) => {
     ControllerTeacher.createTeacher(req.body.firstName, req.body.lastName, req.body.email)
     .then(() => {
-        res.redirect('/teacher')
+        res.render('addTeacher', {message: 'Teacher data has been saved successfully', err: null})
     }).catch((err) => {
-        console.log(err);
+        res.render('addTeacher', {message: null, err: err.message})
     });
 })
 
 router.get('/edit/:id', (req, res) => {
     ControllerTeacher.getTeacher(req.params.id)
     .then((teacher) => {
-        res.render('editTeacher', {teacher: teacher})
+        res.render('editTeacher', {teacher: teacher, message: 'Are you sure to change this data?', err: null})
     }).catch((err) => {
-        console.log(err);
+        res.render('editTeacher', {teacher: null, message: null, err: err.message}) 
     });
 })
 
 router.post('/edit/:id', (req, res) => {
-    ControllerTeacher.updateTeacher(req.params.id, req.body.firstName, req.body.lastName, req.body.email)
+    ControllerTeacher.updateTeacher(req.params.id,req.body.firstName,req.body.lastName,req.body.email)
     .then(() => {
-        res.redirect('/teacher')
+        ControllerTeacher.getTeacher(req.params.id)
+        .then((teacher) => {
+            res.render('editTeacher', {teacher: teacher, message:'Teacher data has been updated successfully', err: null})  
+        })
+        .catch((err) => {
+            res.render('editTeacher', {teacher: null, message: null, err: err.message}) 
+        })
+    })
+    .catch((err) => {
+        ControllerTeacher.getTeacher(req.params.id)
+        .then((teacher) => {
+            res.render('editTeacher', {teacher: teacher, message: null, err: err.message})  
+        })
     })
 })
 

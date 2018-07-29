@@ -12,7 +12,17 @@
     <div class="container">
             <div class="container" style="text-align: center">
                 <h1>Edit Student Data</h1>
-                <a href="/student" class="badge badge-primary">Show All Student</a>
+                <button type="button" class="btn btn-primary" onclick="location.href = '/student'">Show All Student</button>  
+                <br><br>
+                <% if (message) { %>
+                    <div class="alert alert-success" role="alert">
+                            <%= message %>
+                    </div>
+                <% }else if(err) { %>
+                    <div class="alert alert-danger" role="alert">
+                            <%= err %>
+                    </div>
+                <% } %>
             </div>
             <form action="/student/edit/<%= student.id%>" method="post">
                 <div class="form-group">
@@ -25,13 +35,13 @@
                 </div>
                 <div>
                     <label for="firstName">Email :</label>
-                    <input type="email" name="email" value="<%= student.email %>" class="form-control">
+                    <input type="text" name="email" value="<%= student.email %>" class="form-control">
                 </div>
                 <br>
                 <button class="btn btn-success">Edit Student</button>
             </form>
             <div style="text-align: right">
-                <a href="/student" class="badge badge-primary">Back</a>
+                    <button type="button" class="btn btn-primary" onclick="location.href = '/student'">Back</button>  
             </div>
     </div>
   

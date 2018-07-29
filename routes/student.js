@@ -13,15 +13,15 @@ router.get('/', (req, res) => {
 })
 
 router.get('/add', (req, res) => {
-    res.render('addStudent')
+    res.render('addStudent', {message: null, err: null})
 })
 
 router.post('/add', (req, res) => {
     ControllerStudent.createStudent(req.body.firstName, req.body.lastName, req.body.email)
     .then(() => {
-        res.redirect('/student')
+        res.render('addStudent', {message: 'Student data has been saved successfully', err: null})
     }).catch((err) => {
-        console.log(err);
+        res.render('addStudent', {message: null, err: err.message})
     });
     
 })
@@ -29,14 +29,29 @@ router.post('/add', (req, res) => {
 router.get('/edit/:id',(req,res) => {
     ControllerStudent.getStudent(req.params.id)
     .then((student) => {
-        res.render('editStudent', {student: student})  
+        res.render('editStudent', {student: student, message: 'Are you sure to change this data?', err: null})  
+    })
+    .catch((err) => {
+        res.render('editStudent', {student: null, message: null, err: err.message}) 
     })
 })
 
 router.post('/edit/:id', (req,res) => {
     ControllerStudent.updateStudent(req.params.id,req.body.firstName,req.body.lastName,req.body.email)
     .then(() => {
-        res.redirect('/student')
+        ControllerStudent.getStudent(req.params.id)
+        .then((student) => {
+            res.render('editStudent', {student: student, message:'Student data has been updated successfully', err: null})  
+        })
+        .catch((err) => {
+            res.render('editStudent', {student: null, message: null, err: err.message}) 
+        })
+    })
+    .catch((err) => {
+        ControllerStudent.getStudent(req.params.id)
+        .then((student) => {
+            res.render('editStudent', {student: student, message: null, err: err.message})  
+        })
     })
 })
 

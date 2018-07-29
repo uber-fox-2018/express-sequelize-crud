@@ -13,27 +13,37 @@
     <div class="container">
         <div class="container" style="text-align: center">
             <h1>Add Student</h1>
-            <a href="/student" class="badge badge-primary">Show All Student</a>
+            <button type="button" class="btn btn-primary" onclick="location.href = '/student'">Show All Student</button>  
+            <br><br>
+            <% if (message) { %>
+                <div class="alert alert-success" role="alert">
+                        <%= message %>
+                </div>
+            <% }else if(err) { %>
+                <div class="alert alert-danger" role="alert">
+                        <%= err %>
+                </div>
+            <% } %>
         </div>
         <div class="container">
             <form action="/student/add" method="POST">
                 <div class="form-group">
                     <label for="exampleInputFirstName1">First Name</label>
-                    <input type="firstName" name="firstName" class="form-control" placeholder="Enter Your First Name">
+                    <input type="text" name="firstName" class="form-control" placeholder="Enter Your First Name">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputLastName1">Last Name</label>
-                    <input type="lastName" name="lastName" class="form-control" placeholder="Enter Your Last Name">
+                    <input type="text" name="lastName" class="form-control" placeholder="Enter Your Last Name">
                 </div>
                 <div class="form-group">
                         <label for="exampleInputEmail1">Email</label>
-                        <input type="email" name="email" class="form-control" placeholder="Enter Your Email">
+                        <input type="text" name="email" class="form-control" placeholder="Enter Your Email">
                 </div>
                 <button type="submit" class="btn btn-success">Add Student</button>
                 </form>
                 <br>
                 <div style="text-align: right">
-                    <a href="/student" class="badge badge-primary">Back</a>
+                        <button type="button" class="btn btn-primary" onclick="location.href = '/student'">Back</button>  
                 </div>
         </div>
     </div>
