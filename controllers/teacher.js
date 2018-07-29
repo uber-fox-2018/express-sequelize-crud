@@ -16,7 +16,7 @@ module.exports = {
     },
 
     addTeacher : (req, res) =>{
-        let newTeacher = req.body; //e.g. { first_name: 'susan',last_name: 'nio', email: 'susan@gmail.com' }
+        let newTeacher = req.body; //e.g. { first_name: 'susan',last_name: 'nio' }
         Teacher.create({
             first_name : newTeacher.first_name[0].toUpperCase() + newTeacher.first_name.slice(1),
             last_name : newTeacher.last_name[0].toUpperCase() + newTeacher.last_name.slice(1),
