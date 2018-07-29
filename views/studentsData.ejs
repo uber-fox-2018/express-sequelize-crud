@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,29 +9,50 @@
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script>
 </head>
+
 <body>
-    <center><h1>Students Data</h1>
+    <center>
+        <h1>Students Data</h1>
         <form action="students/add">
-    <button>add student</button></center></form><br>
-    no <span style="display:inline-block; width: 500px;">| full_name </span>| <span style="display:inline-block; width: 400px;">email </span>| options<br>
+            <button>add student</button>
+    </center>
+    </form>
+    <br>
+    <span style="display:inline-block; width: 30px;">
+        no</span>
+    <span style="display:inline-block; width: 500px;">| full_name </span>|
+    <span style="display:inline-block; width: 400px;">email </span>| options
+    <br>
     <% for(let i = 0 ; i < fileStudents.length ; i++) { %>
-        <hi>&nbsp<%= fileStudents[i].id %>&nbsp&nbsp|&nbsp</hi>
-        <span style="display:inline-block; width: 485px;">
-        <hi><%= fileStudents[i].first_name %></hi>
-        <hi><%= fileStudents[i].last_name %></span>|</hi>
+        <span style="display:inline-block; width: 35px;">
+            <hi>&nbsp
+                <%= fileStudents[i].id %>
+            </hi>
+        </span>|
+        <span style="display:inline-block; width: 490px;">
+            <hi>
+                <%= fileStudents[i].first_name %>
+            </hi>
+            <hi>
+                <%= fileStudents[i].last_name %>
+        </span>|</hi>
         <span style="display:inline-block; width: 405px;">
-        <hi><%= fileStudents[i].email %></hi>
+            <hi>
+                <%= fileStudents[i].email %>
+            </hi>
         </span>
-        <a href="/students/edit">
-            <button>edit</button>
+        <a href="/students">
+            <button name="<%fileStudents[i].id%>">edit</button>
         </a>
         <br>
-    <% } %>
-    <br>
-    <form action="/students" method="POST">
-        <label for="delete">masukkan id yang ingin di delete</label>
-        <input type="text" name="delete">
-        <input type="submit" value="delete">
-    </form>
+        <% } %>
+
+            <br>
+            <form action="/students" method="POST">
+                <label for="delete">masukkan id yang ingin di delete</label>
+                <input type="text" name="delete">
+                <input type="submit" value="delete">
+            </form>
 </body>
+
 </html>
