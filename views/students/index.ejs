@@ -1,0 +1,30 @@
+<%- include('../template/header') -%>
+
+<div class="container">
+    <br>
+    <h3>Students Data</h3>
+    <a href="/student/add" class="btn btn-primary"> + </a>
+    <br>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+            <th scope="col">#</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Option </th>
+            </tr>
+        </thead>
+        <tbody>
+            <% let no = 1; students.forEach( (student) => { %>
+            <tr>
+                <th scope="row"><%=no++%></th>
+                <td> <%=student.first_name%> </td>
+                <td> <%=student.last_name%> </td>
+                <td> <%=student.email%> </td>
+                <td>Edit | Hapus</td>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</div>
