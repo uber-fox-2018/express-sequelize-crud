@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Teacher Page</title>
+</head>
+<body>
+    <h1 style="text-align: center">Add Teacher Data</h1>
+    <a href="/teachers"><h3 style="text-align: center">Show All Data</h3></a>
+    <form action="/teachers/add" method="post">
+        <div>
+            <label for="first_name">First Name :</label>
+            <input type="text" name="first_name">
+        </div>
+        <br>
+        <div>
+            <label for="last_name">Last Name :</label>
+            <input type="text" name="last_name">
+        </div>
+        <br>
+        <div>
+            <label for="email">Email :</label>
+            <input type="email" name="email">
+        </div>
+        <br>
+        <button>Add Teacher</button>
+    </form>
+</body>
+</html>
