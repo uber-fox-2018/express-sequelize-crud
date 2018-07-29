@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+    <h3>Edit Data Student</h3>
+        <div class="w3-container w3-green">
+                <h4>Edit Form</h4>
+              </div>
+              
+              <form class="w3-container" action="/student/edit/<%= dataToEdit.id %>" method="POST">
+                <p>
+                <input class="w3-input" type="text" name="first_name" value="<%= dataToEdit.first_name %>">
+                <label>First Name</label></p>
+              
+                <p>
+                <input class="w3-input" type="text" name="last_name" value="<%= dataToEdit.last_name %>">
+                <label>Last Name</label></p>
+              
+                <p>
+                <input class="w3-input" type="text" name="email" value="<%= dataToEdit.email %>">
+                <label>Email</label></p>
+
+                <input type="submit" value="submit">
+              </form>
+</body>
+</html>
