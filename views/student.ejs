@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/style.css" type="text/css" > 
+    <title><%=title%></title>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <h2 id="schollName"> HACKTIV8ed </h2>
+        </div>
+        <nav>
+            <a href="/subject">
+                Subject
+            </a>
+            <a href="/teacher">
+                Teacher
+            </a>
+            <a href="/student">
+                Student
+            </a>
+        </nav>
+    </div>
+    <div class="table">
+        <div class="contentTable">
+            <h1> <%= header %> </h1>
+        </div>
+        <div class="navCrud">
+            <a href="/studentadd">
+                    Add
+            </a>
+        </div>
+            <table>
+                <tr>
+                    <th class="id">Id</th>
+                    <th class="firstName">First name</th>
+                    <th class="lastName">Last name</th>
+                    <th class="birthday">Birthday</th> 
+                    <th class="gender">Gender</th>
+                    <th class="email">Email</th>
+                    <th class="delete"></th>
+                    <th class="update"></th>
+                </tr>
+                <% for (let i = 0; i < data.length; i++) { %>
+                    <tr>
+                        <td><%= data[i].id %></td>
+                        <td><%= data[i].firstName %></td>
+                        <td><%= data[i].lastName %></td>
+                        <td><%= data[i].birthday %></td>
+                        <td><%= data[i].gender %></td>
+                        <td><%= data[i].email %></td>
+
+                        <td class = "edit"><a href="/studentDelete/<%=data[i].id%>" method="POST" title="<%=data[i].id%>">delete</a></td>
+                        <td class = "edit"><a href="/studentUpdate">update</a></td>
+                    </tr>
+                <% } %>
+            </table>
+    </div>
+</body>
+</html>

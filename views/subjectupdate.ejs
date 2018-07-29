@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/stylecrud.css" type="text/css" > 
+    <title><%=title%></title>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <h2 id="schollName"> HACKTIV8ed </h2>
+        </div>
+    </div>
+    <div class="table">
+        <div class="contentText">
+            <h1> <%=header%> </h1>
+        </div>
+        <div>
+            <form action="/subjectupdate" method="POST">
+                <div class="form">
+                    <p>Student Id : <br></p>
+                    <input type="text" name="id"><br>
+                    <p id="notif">Please check twice subject ID before your change subject</p>
+                </div>
+                <div class="form">
+                    <p>Subject name : <br></p>
+                    <input type="text" name="subjectName"><br>
+                    <br>
+                    <div id="submit">
+                        <input type="submit" value="submit" >
+                    </div>
+                    <div id="notif">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
