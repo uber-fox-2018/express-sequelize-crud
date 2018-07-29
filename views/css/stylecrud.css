@@ -1,0 +1,59 @@
+* {
+    padding: 0px;
+    margin:0px;
+    text-decoration: none;
+}
+body {
+    background-color: rgb(223, 236, 236);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.header {
+    width: 100%;
+    padding: 20px 0px 20px 0px;
+    background-color: rgb(140, 211, 190);
+}
+.logo {
+    width: 90%;
+    margin: 0px auto;
+}
+#schollName {
+    color: rgb(241, 252, 248);
+}
+.table {
+    width: 100%;
+}
+.contentText {
+    width: 500px;
+    margin: 10px auto;
+    padding: 10px 10px 20px ;
+    color: rgb(68, 121, 121);
+    font-size: 16pt;
+    text-align: center;
+}
+
+.form {
+    width: 300px;
+    margin: 0px auto 50px;
+    padding: 20px 15px 20px;
+    color: rgb(68, 121, 121);
+    font-size: 13pt;
+    background-color: aliceblue;
+    text-align: left;
+    border-radius: 5px;
+}
+p{
+    padding: 6px 25px 2px;
+}
+input {
+    margin: 0px 25px;
+}
+#submit {
+    text-align: right;
+    margin-right: 10px;
+}
+#notif {
+    padding: 20px 25px 10px;
+    font-size: 10pt;
+    color: red;
+}
