@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>teacher</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="main.js"></script>
+</head>
+<body><br>
+    <div class="container" style="text-align: right">
+    <div class="container" style="text-align: center">
+            <h1>Teacher Data</h1>
+            <a href="/teacher/add" class="badge badge-primary">Add Teacher</a>
+            <br><br>
+            <div class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% teacher.forEach((teacher) => { %>
+                    <tr>
+                    <td><%=teacher.id %></td>
+                    <td><%=teacher.firstName %></td>
+                    <td><%=teacher.lastName %></td>
+                    <td><%=teacher.email %></td>
+                    <td><a href="/teacher/edit/<%=teacher.id%>" class="badge badge-info">Edit</a>  <a href="/teacher/delete/<%=teacher.id%>" class="badge badge-info">Delete</a> </td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+            </div><br>
+        </div> 
+            <a href="/" class="badge badge-primary">Back</a> 
+    </div>
+    
+</body>
+</html>
