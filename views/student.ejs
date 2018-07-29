@@ -34,17 +34,24 @@
                             <th data-field="id">FIRST NAME</th>
                         	<th data-field="name" data-sortable="true">LAST NAME</th>
                         	<th data-field="salary" data-sortable="true">EMAIL</th>
-                        	<th data-field="actions" data-formatter="operateFormatter" data-events="operateEvents">Actions</th>
+                        	<th>ACTIONS</th>
                         </thead>
                         <tbody>
-                            <tr>
                                 <% dataStudent.forEach( data => {  %>
+                            <tr>
                             	<td><%= data.first_name %></td>
                             	<td><%= data.last_name %></td>
                             	<td><%= data.email %></td>
-                                <td></td>
-                                <% }) %>
+                                <td>
+                                    <a rel="tooltip" class="table-action edit btn btn-primary" href="editStudent/<%= data.id %>" title="<%= data.id %>" data-toggle="modal" data-target="#exampleModal">
+                                        <i class="fa fa-edit"></i>
+                                    </a>
+                                    <a rel="tooltip" class="table-action remove" href="deleteStudent/<%= data.id %>" title="<%= data.id %>">
+                                        <i class="fa fa-remove"></i>
+                                    </a>
+                                </td>
                             </tr>
+                            <% }) %>
                         </tbody>
                     </table>
                 </div>
@@ -52,6 +59,18 @@
             </div>
         </div>
     </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            
+          </div>
+        </div>
+    </div>
+
+
 </div>
 
 </body>
@@ -91,51 +110,17 @@
                     detailClose: 'fa fa-minus-circle'
                 }
             });
-            
-                        
+                 
             
             $(window).resize(function () {
                 $table.bootstrapTable('resetView');
             });
     
             
-            window.operateEvents = {
-                'click .like': function (e, value, row, index) {
-                    alert('You click like icon, row: ' + JSON.stringify(row));
-                    console.log(value, row, index);
-                },
-                'click .edit': function (e, value, row, index) {
-                    alert('You click edit icon, row: ' + JSON.stringify(row));
-                    console.log(value, row, index);    
-                },
-                'click .remove': function (e, value, row, index) {
-                    $table.bootstrapTable('remove', {
-                        field: 'id',
-                        values: [row.id]
-                    });
-            
-                }
-            };
-            
             $alertBtn.click(function () {
                 alert("HELLO HARLES");
             });
             
         });
-            
-    
-        function operateFormatter(value, row, index) {
-            return [
-                '<a rel="tooltip" title="Like" class="table-action like" href="javascript:void(0)" title="Like">',
-                    '<i class="fa fa-heart"></i>',
-                '</a>',
-                '<a rel="tooltip" title="Edit" class="table-action edit" href="javascript:void(0)" title="Edit">',
-                    '<i class="fa fa-edit"></i>',
-                '</a>',
-                '<a rel="tooltip" title="Remove" class="table-action remove" href="javascript:void(0)" title="Remove">',
-                    '<i class="fa fa-remove"></i>',
-                '</a>'
-            ].join('');
-        }      
     </script>
 </html>
