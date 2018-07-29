@@ -7,7 +7,6 @@ routes.get('/students/add',function(req,res){
     res.render('studentAdd')
 })
 
-
 routes.post('/students/add',urlencodeParser ,function(req,res){
     let data = {
         first_name: req.body.first_name,
@@ -17,6 +16,7 @@ routes.post('/students/add',urlencodeParser ,function(req,res){
         updatedAt: new Date
     }
     Model.Student.create(data)
+    
     res.redirect('/students')
 })
 
