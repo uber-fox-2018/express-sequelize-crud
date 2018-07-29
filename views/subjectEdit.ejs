@@ -79,10 +79,10 @@
                     <li>
                         <a href="/uberFoxSchool/teachers">Teachers</a>
                     </li>
+                    <li><a href="/uberFoxSchool/students">Students</a></li>
                     <li>
-                        <a href="/uberFoxSchool/students">Students</a>
+                        <a href="/uberFoxSchool/subjects">Subjects</a>
                     </li>
-                    <li><a href="/uberFoxSchool/subjects">Subjects</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
@@ -109,56 +109,44 @@
                 <center>
                     <table style="width:70%">
                         <tr>
+                            <th>
+                                <center>Subject Id</center>
+                            </th>
 
                             <th>
-                                <center>Firstname</center>
+                                <center>Subject Name</center>
                             </th>
-                            <th>
-                                <center>Lastname</center>
-                            </th>
-                            <th>
-                                <center>Student Id</center>
-                            </th>
-                            <% students.forEach( student => {%>
+                            
+
+                            <% subjects.forEach( subject => {%>
                         </tr>
                         <tr>
 
                             <td>
                                 <center>
-                                    <%= student.dataValues.first_name %>
+                                    <%= subject.dataValues.id %>
                                 </center>
 
                             </td>
 
                             <td>
                                 <center>
-                                    <%= student.dataValues.last_name %>
+                                    <%= subject.dataValues.subject_name %>
                                 </center>
                             </td>
-                            <td>
-                                <center>
-                                    <%= student.dataValues.id %>
-                                </center>
-                            </td>
+                           
                             <% }) %>
                     </table>
 
-                </center><br>
-                <center>
-                    <h4>MENU</h4>
-
-                    <div>
-                        <a href="/uberFoxSchool/students/edit">
-                            <button type="submit" form="form2" value="Edit">Edit </button>
-                        </a>
-                        <a href="/uberFoxSchool/students/delete">
-                            <button type="submit" form="form2" value="delete">delete </button>
-                        </a>
-                        <a href="/uberFoxSchool/students/add">
-                            <button type="submit" form="form2" value="Add">Add </button>
-                        </a>
-                    </div>
                 </center>
+
+
+                <h4>EDIT DATA</h4>
+                <form action="/subjects/edit/:id" method="post" id="form2">
+                    Subject Id :<input type='text' name='id'><br>
+                    Subject Name :<input type='text' name='subject_name'><br>
+                    <button type="submit" form="form2" value="Edit">Edit </button>
+
             </div>
             <div class="col-sm-2 sidenav">
             </div>

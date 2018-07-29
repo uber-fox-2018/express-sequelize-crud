@@ -109,56 +109,39 @@
                 <center>
                     <table style="width:70%">
                         <tr>
-
                             <th>
-                                <center>Firstname</center>
+                                <center>Subject Id</center>
                             </th>
                             <th>
-                                <center>Lastname</center>
+                                <center>Subject Name</center>
                             </th>
-                            <th>
-                                <center>Student Id</center>
-                            </th>
-                            <% students.forEach( student => {%>
+                            <% subjects.forEach( subject => {%>
                         </tr>
                         <tr>
-
                             <td>
                                 <center>
-                                    <%= student.dataValues.first_name %>
+                                    <%= subject.dataValues.id %>
                                 </center>
 
                             </td>
+                            <td>
+                                <center>
+                                    <%= subject.dataValues.subject_name %>
+                                </center>
 
-                            <td>
-                                <center>
-                                    <%= student.dataValues.last_name %>
-                                </center>
-                            </td>
-                            <td>
-                                <center>
-                                    <%= student.dataValues.id %>
-                                </center>
                             </td>
                             <% }) %>
                     </table>
 
-                </center><br>
-                <center>
-                    <h4>MENU</h4>
-
-                    <div>
-                        <a href="/uberFoxSchool/students/edit">
-                            <button type="submit" form="form2" value="Edit">Edit </button>
-                        </a>
-                        <a href="/uberFoxSchool/students/delete">
-                            <button type="submit" form="form2" value="delete">delete </button>
-                        </a>
-                        <a href="/uberFoxSchool/students/add">
-                            <button type="submit" form="form2" value="Add">Add </button>
-                        </a>
-                    </div>
                 </center>
+
+                <h4>ADD DATA</h4>
+                <form action="/subjects/add" method="post" id="form1">
+                    subject name :
+                    <input type='text' name='subject_name'>
+                    <br>
+                    <button type="submit" form="form1" value="Submit">ADD </button>
+                    <br>
             </div>
             <div class="col-sm-2 sidenav">
             </div>
